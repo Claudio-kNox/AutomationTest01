@@ -2,9 +2,13 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import io.github.cdimascio.dotenv.Dotenv;
 
 public class GmailLoginPage {
     WebDriver driver;
+    // Utilizar la variable .env
+    Dotenv dotenv = Dotenv.load();
+    String password = dotenv.get("GMAIL_PASSWORD");
 
     public GmailLoginPage(WebDriver driver) {
         this.driver = driver;
